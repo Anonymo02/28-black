@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="sr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>28 CRNA | Kokteli</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#0a0a0a',
+                        gold28: '#b39b5e'
+                    },
+                    fontFamily: {
+                        heading: ['Anton', 'sans-serif'],
+                        body: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        html, body {
+            background-color: #0a0a0a;
+            color: #ffffff;
+            overflow-x: hidden;
+            max-width: 100%;
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+        
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        ::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Flip Card Styles */
+        .perspective-1000 {
+            perspective: 1000px;
+        }
+        .transform-style-3d {
+            transform-style: preserve-3d;
+        }
+        .backface-hidden {
+            backface-visibility: hidden;
+        }
+        .rotate-y-180 {
+            transform: rotateY(180deg);
+        }
+        .flip-card-inner {
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .flip-card.flipped .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+    </style>
+</head>
+<body class="font-body antialiased selection:bg-gold28 selection:text-white">
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed inset-0 bg-black/95 backdrop-blur-xl z-[100] transform translate-x-full transition-transform duration-700 ease-[cubic-bezier(0.76,0,0.24,1)] flex flex-col">
+        <div class="flex justify-between items-center p-6 md:p-10 w-full">
+            <a href="/"><img src="slike/28_logo.webp" alt="28 Black Logo" class="h-8"></a>
+            <button id="close-menu" class="font-heading text-5xl text-white hover:text-gold28 transition-colors leading-none">&times;</button>
+        </div>
+        <div class="flex-1 flex flex-col justify-center items-center gap-8 md:gap-12 font-heading text-5xl md:text-7xl text-center uppercase text-white leading-normal">
+            <a href="/drinks.html" class="mobile-link relative group overflow-hidden block">
+                <span class="block transition-transform duration-500 ease-out group-hover:-translate-y-full">Proizvodi</span>
+                <span class="absolute inset-0 block text-gold28 transition-transform duration-500 ease-out translate-y-full group-hover:translate-y-0">Proizvodi</span>
+            </a>
+            <a href="kokteli.html" class="mobile-link relative group overflow-hidden block">
+                <span class="block transition-transform duration-500 ease-out group-hover:-translate-y-full">Kokteli</span>
+                <span class="absolute inset-0 block text-gold28 transition-transform duration-500 ease-out translate-y-full group-hover:translate-y-0">Kokteli</span>
+            </a>
+            <a href="index.html#sastojci" class="mobile-link relative group overflow-hidden block">
+                <span class="block transition-transform duration-500 ease-out group-hover:-translate-y-full">Sastojci</span>
+                <span class="absolute inset-0 block text-gold28 transition-transform duration-500 ease-out translate-y-full group-hover:translate-y-0">Sastojci</span>
+            </a>
+            <a href="index.html#nasa-prica" class="mobile-link relative group overflow-hidden block">
+                <span class="block transition-transform duration-500 ease-out group-hover:-translate-y-full">Naša priča</span>
+                <span class="absolute inset-0 block text-gold28 transition-transform duration-500 ease-out translate-y-full group-hover:translate-y-0">Naša priča</span>
+            </a>
+        </div>
+        <div class="p-10 flex justify-center gap-8 text-sm font-bold tracking-widest uppercase text-gray-500">
+            <a href="https://www.instagram.com/28black_srbija/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Instagram</a>
+            <a href="https://www.tiktok.com/@28black.rs" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">TikTok</a>
+            <a href="https://www.youtube.com/@28BLACKchannel" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">YouTube</a>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 w-full p-6 md:p-10 flex justify-between items-center z-50 mix-blend-difference">
+        <a href="/"><img src="slike/28_logo.webp" alt="28 Black Logo" class="h-8 md:h-10"></a>
+        <div class="hidden md:flex gap-8 font-bold text-sm tracking-widest uppercase">
+            <a href="drinks.html" class="hover:text-gold28 transition-colors">Proizvodi</a>
+            <a href="kokteli.html" class="text-gold28 transition-colors">Kokteli</a>
+            <a href="index.html#sastojci" class="hover:text-gold28 transition-colors">Sastojci</a>
+            <a href="index.html#nasa-prica" class="hover:text-gold28 transition-colors">Naša priča</a>
+        </div>
+        <button id="open-menu" class="md:hidden font-heading text-xl hover:text-gold28 transition-colors">MENI</button>
+    </nav>
+
+    <main class="pt-32 pb-20 overflow-x-hidden w-full max-w-[100vw]">
+        <!-- Header Section -->
+        <div class="text-center pt-16 pb-12 px-4 gs-reveal">
+            <h1 class="font-heading text-5xl md:text-7xl mb-6">28 BLACK <span class="text-gold28">Kokteli</span></h1>
+            <p class="text-lg md:text-xl text-gray-300 max-w-4xl mx-auto mb-12 leading-relaxed">
+                28 Black kokteli su stvoreni za duge noći i vrhunski ukus. Svaki ukus ima svoj jedinstveni karakter: Açaí, Açaí Zero, Sour Cherry, Waldmeister, Limette-Minze, Sour Mango-Kiwi ili Classic Energy Taste. Sa alkoholom ili bez njega – ti odlučuješ kako će se veče odvijati. Jasni, intenzivni i moderni – napici koji ti savršeno odgovaraju i svaki trenutak podižu na viši nivo.
+            </p>
+        </div>
+
+        <!-- Cocktails Grid -->
+        <div class="container mx-auto px-4 pb-32">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-[1400px] mx-auto">
+                
+                <!-- Cocktail Card 1 -->
+                <div class="flip-card perspective-1000 cursor-pointer h-[500px] gs-reveal" onclick="this.classList.toggle('flipped')">
+                    <div class="flip-card-inner relative w-full h-full transform-style-3d">
+                        <!-- Front -->
+                        <div class="absolute w-full h-full backface-hidden border border-white/20 bg-black/50 p-8 flex flex-col justify-between hover:border-white/40 transition-colors">
+                            <div class="flex-1 flex items-center justify-center mb-6">
+                                <!-- UBACI SLIKU KOKTELA OVDE -->
+                                <img src="slike/koktelsour.webp" alt="Sour Sunrise 28" class="max-h-full object-contain">
+                                
+                            </div>
+                            <div>
+                                <h3 class="font-heading text-3xl mb-2">Sour Sunrise 28</h3>
+                                <p class="text-gray-400 text-sm mb-6">Voćni izlazak sunca u čaši. Tekila, grenadin i led</p>
+                                <button class="bg-white text-black font-bold py-3 px-6 uppercase tracking-wider text-sm hover:bg-gray-200 transition-colors">Napravi sada</button>
+                            </div>
+                        </div>
+                        <!-- Back -->
+                        <div class="absolute w-full h-full backface-hidden rotate-y-180 border border-gold28 bg-black p-8 flex flex-col">
+                            <h3 class="font-heading text-3xl mb-6 text-gold28">Kako napraviti:</h3>
+                            <!-- UBACI SASTOJKE KOKTELA OVDE -->
+                            <ul class="text-gray-300 space-y-3 list-disc list-inside flex-1 overflow-y-auto">
+                                <li>Kockice leda</li>
+                                <li>4 cl bele tekile (Tequila Blanco)</li>
+                                <li>2 cl grenadina</li>
+                                <li>Promešati</li>
+                                <li>12 cl 28 BLACK Sour Mango-Kiwi</li>
+                                <li>Poslužiti u Highball čaši (visoka čaša)</li>
+                                <li>Dekoracija: Kriška ananasa</li>
+                            </ul>
+                            <p class="text-sm text-gray-500 mt-4 italic">Klikni ponovo da zatvoriš</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cocktail Card 2 -->
+                <div class="flip-card perspective-1000 cursor-pointer h-[500px] gs-reveal" onclick="this.classList.toggle('flipped')">
+                    <div class="flip-card-inner relative w-full h-full transform-style-3d">
+                        <!-- Front -->
+                        <div class="absolute w-full h-full backface-hidden border border-white/20 bg-black/50 p-8 flex flex-col justify-between hover:border-white/40 transition-colors">
+                            <div class="flex-1 flex items-center justify-center mb-6">
+                                <!-- UBACI SLIKU KOKTELA OVDE -->
+                                <img src="slike/koktel1.webp" alt="Sour Sunrise 28" class="max-h-full object-contain">
+                            </div>
+                            <div>
+                                <h3 class="font-heading text-3xl mb-2">Sunny Raspberry Lime 28</h3>
+                                <p class="text-gray-400 text-sm mb-6">Osveženje i letnji osećaj u čaši...</p>
+                                <button class="bg-white text-black font-bold py-3 px-6 uppercase tracking-wider text-sm hover:bg-gray-200 transition-colors">Napravi sada</button>
+                            </div>
+                        </div>
+                        <!-- Back -->
+                        <div class="absolute w-full h-full backface-hidden rotate-y-180 border border-gold28 bg-black p-8 flex flex-col">
+                            <h3 class="font-heading text-3xl mb-6 text-gold28">Kako napraviti:</h3>
+                            <!-- UBACI SASTOJKE KOKTELA OVDE -->
+                            <ul class="text-gray-300 space-y-3 list-disc list-inside flex-1 overflow-y-auto">
+                                <li>Kockice leda</li>
+                                <li>6 cl ruma</li>
+                                <li>1 cl sirupa od maline</li>
+                                <li>5 malina (smrznutih ili svežih)</li>
+                                <li>Kriške limete</li>
+                                <li>Promešati</li>
+                                <li>12 cl 28 BLACK Limette-Minze</li>
+                                <li>Poslužiti u Longdrink čaši (visokoj čaši)</li>
+                                <li>Dekoracija: Grančica nane</li>
+                            </ul>
+                            <p class="text-sm text-gray-500 mt-4 italic">Klikni ponovo da zatvoriš</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cocktail Card 3 -->
+                <div class="flip-card perspective-1000 cursor-pointer h-[500px] gs-reveal" onclick="this.classList.toggle('flipped')">
+                    <div class="flip-card-inner relative w-full h-full transform-style-3d">
+                        <!-- Front -->
+                        <div class="absolute w-full h-full backface-hidden border border-white/20 bg-black/50 p-8 flex flex-col justify-between hover:border-white/40 transition-colors">
+                            <div class="flex-1 flex items-center justify-center mb-6">
+                                <!-- UBACI SLIKU KOKTELA OVDE -->
+                                <img src="slike/koktel4.webp" alt="Sprizz 28" class="max-h-full object-contain">
+                            </div>
+                            <div>
+                                <h3 class="font-heading text-3xl mb-2">Sprizz 28</h3>
+                                <p class="text-gray-400 text-sm mb-6">Aperol Spritz u 28 BLACK verziji...</p>
+                                <button class="bg-white text-black font-bold py-3 px-6 uppercase tracking-wider text-sm hover:bg-gray-200 transition-colors">Napravi sada</button>
+                            </div>
+                        </div>
+                        <!-- Back -->
+                        <div class="absolute w-full h-full backface-hidden rotate-y-180 border border-gold28 bg-black p-8 flex flex-col">
+                            <h3 class="font-heading text-3xl mb-6 text-gold28">Kako napraviti:</h3>
+                            <!-- UBACI SASTOJKE KOKTELA OVDE -->
+                            <ul class="text-gray-300 space-y-3 list-disc list-inside flex-1 overflow-y-auto">
+                                <li>Kockice leda</li>
+                                <li>4 cl Aperola</li>
+                                <li>25 cl 28 BLACK Sour Mango-Kiwi</li>
+                                <li>Opciono: 5 cl penušavog vina</li>
+                                <li>Promešati</li>
+                                <li>Poslužiti u čaši za vino</li>
+                                <li>Dekoracija: Kriška pomorandže</li>
+                            </ul>
+                            <p class="text-sm text-gray-500 mt-4 italic">Klikni ponovo da zatvoriš</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cocktail Card 4 -->
+                <div class="flip-card perspective-1000 cursor-pointer h-[500px] gs-reveal" onclick="this.classList.toggle('flipped')">
+                    <div class="flip-card-inner relative w-full h-full transform-style-3d">
+                        <!-- Front -->
+                        <div class="absolute w-full h-full backface-hidden border border-white/20 bg-black/50 p-8 flex flex-col justify-between hover:border-white/40 transition-colors">
+                            <div class="flex-1 flex items-center justify-center mb-6">
+                                <!-- UBACI SLIKU KOKTELA OVDE -->
+                                <img src="slike/koktel3.webp" alt="Sour Sunrise 28" class="max-h-full object-contain">
+                            </div>
+                            <div>
+                                <h3 class="font-heading text-3xl mb-2">Italian 28</h3>
+                                <p class="text-gray-400 text-sm mb-6">Italijanski šarm u čaši. Amareto, Kampari i led...</p>
+                                <button class="bg-white text-black font-bold py-3 px-6 uppercase tracking-wider text-sm hover:bg-gray-200 transition-colors">Napravi sada</button>
+                            </div>
+                        </div>
+                        <!-- Back -->
+                        <div class="absolute w-full h-full backface-hidden rotate-y-180 border border-gold28 bg-black p-8 flex flex-col">
+                            <h3 class="font-heading text-3xl mb-6 text-gold28">Kako napraviti:</h3>
+                            <!-- UBACI SASTOJKE KOKTELA OVDE -->
+                            <ul class="text-gray-300 space-y-3 list-disc list-inside flex-1 overflow-y-auto">
+                                <li>Kockice leda</li>
+                                <li>2 cl Amareta</li>
+                                <li>4 cl Kamparia</li>
+                                <li>Promešati</li>
+                                <li>12 cl 28 BLACK Sour Mango-Kiwi</li>
+                                <li>Poslužiti u Double Old Fashioned čaši (niska, široka čaša)</li>
+                                <li>Dekoracija: Mango ili kivi</li>
+                            </ul>
+                            <p class="text-sm text-gray-500 mt-4 italic">Klikni ponovo da zatvoriš</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cocktail Card 5 -->
+                <div class="flip-card perspective-1000 cursor-pointer h-[500px] gs-reveal" onclick="this.classList.toggle('flipped')">
+                    <div class="flip-card-inner relative w-full h-full transform-style-3d">
+                        <!-- Front -->
+                        <div class="absolute w-full h-full backface-hidden border border-white/20 bg-black/50 p-8 flex flex-col justify-between hover:border-white/40 transition-colors">
+                            <div class="flex-1 flex items-center justify-center mb-6">
+                                <!-- UBACI SLIKU KOKTELA OVDE -->
+                                <img src="slike/koktel2.webp" alt="Sour Sunrise 28" class="max-h-full object-contain">
+                            </div>
+                            <div>
+                                <h3 class="font-heading text-3xl mb-2">Cherry Comfort 28</h3>
+                                <p class="text-gray-400 text-sm mb-6">Voćno, jednostavno i zaista osvežavajuće...</p>
+                                <button class="bg-white text-black font-bold py-3 px-6 uppercase tracking-wider text-sm hover:bg-gray-200 transition-colors">Napravi sada</button>
+                            </div>
+                        </div>
+                        <!-- Back -->
+                        <div class="absolute w-full h-full backface-hidden rotate-y-180 border border-gold28 bg-black p-8 flex flex-col">
+                            <h3 class="font-heading text-3xl mb-6 text-gold28">Kako napraviti</h3>
+                            <!-- UBACI SASTOJKE KOKTELA OVDE -->
+                            <ul class="text-gray-300 space-y-3 list-disc list-inside flex-1 overflow-y-auto">
+                                <li>Kockice leda</li>
+                                <li>6 cl Southern Comfort-a</li>
+                                <li>3 cl soka od nara</li>
+                                <li>Promućkati (šejkovati)</li>
+                                <li>Dodati 8 cl 28 BLACK Sour Cherry</li>
+                                <li>Poslužiti u Longdrink čaši (visokoj čaši)</li>
+                                <li>Dekoracija: Višnje</li>
+                            </ul>
+                            <p class="text-sm text-gray-500 mt-4 italic">Klikni ponovo da zatvoriš</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cocktail Card 6 -->
+                <div class="flip-card perspective-1000 cursor-pointer h-[500px] gs-reveal" onclick="this.classList.toggle('flipped')">
+                    <div class="flip-card-inner relative w-full h-full transform-style-3d">
+                        <!-- Front -->
+                        <div class="absolute w-full h-full backface-hidden border border-white/20 bg-black/50 p-8 flex flex-col justify-between hover:border-white/40 transition-colors">
+                            <div class="flex-1 flex items-center justify-center mb-6">
+                                <!-- UBACI SLIKU KOKTELA OVDE -->
+                                <img src="slike/koktel5.webp" alt="Sour Sunrise 28" class="max-h-full object-contain">
+                            </div>
+                            <div>
+                                <h3 class="font-heading text-3xl mb-2">Royal 28</h3>
+                                <p class="text-gray-400 text-sm mb-6">Voćno, cvetno, lagano i zaista sjajno...</p>
+                                <button class="bg-white text-black font-bold py-3 px-6 uppercase tracking-wider text-sm hover:bg-gray-200 transition-colors">Napravi sada</button>
+                            </div>
+                        </div>
+                        <!-- Back -->
+                        <div class="absolute w-full h-full backface-hidden rotate-y-180 border border-gold28 bg-black p-8 flex flex-col">
+                            <h3 class="font-heading text-3xl mb-6 text-gold28">Kako napraviti</h3>
+                            <!-- UBACI SASTOJKE KOKTELA OVDE -->
+                            <ul class="text-gray-300 space-y-3 list-disc list-inside flex-1 overflow-y-auto">
+                                <li>Kockice leda</li>
+                                <li>1 cl likera od ruže</li>
+                                <li>10 cl 28 BLACK Açaí</li>
+                                <li>Poslužiti u čaši za penušavo vino (šampanjac)</li>
+                                <li>Dekoracija: Osušene latice ruže</li>
+                            </ul>
+                            <p class="text-sm text-gray-500 mt-4 italic">Klikni ponovo da zatvoriš</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cocktail Card 7 -->
+                <div class="flip-card perspective-1000 cursor-pointer h-[500px] gs-reveal" onclick="this.classList.toggle('flipped')">
+                    <div class="flip-card-inner relative w-full h-full transform-style-3d">
+                        <!-- Front -->
+                        <div class="absolute w-full h-full backface-hidden border border-white/20 bg-black/50 p-8 flex flex-col justify-between hover:border-white/40 transition-colors">
+                            <div class="flex-1 flex items-center justify-center mb-6">
+                                <!-- UBACI SLIKU KOKTELA OVDE -->
+                                <img src="slike/koktel7.webp" alt="Bramble 28" class="max-h-full object-contain">
+                            </div>
+                            <div>
+                                <!-- UBACI NAZIV I OPIS KOKTELA OVDE -->
+                                <h3 class="font-heading text-3xl mb-2">Bramble 28</h3>
+                                <p class="text-gray-400 text-sm mb-6">Bobičasto, sveže i lako za pripremu...</p>
+                                <button class="bg-white text-black font-bold py-3 px-6 uppercase tracking-wider text-sm hover:bg-gray-200 transition-colors">Napravi sada</button>
+                            </div>
+                        </div>
+                        <!-- Back -->
+                        <div class="absolute w-full h-full backface-hidden rotate-y-180 border border-gold28 bg-black p-8 flex flex-col">
+                            <h3 class="font-heading text-3xl mb-6 text-gold28">Kako napraviti</h3>
+                            <!-- UBACI SASTOJKE KOKTELA OVDE -->
+                            <ul class="text-gray-300 space-y-3 list-disc list-inside flex-1 overflow-y-auto">
+                                <li>Kockice leda</li>
+                                <li>3 cl džina</li>
+                                <li>2 cl likera od kupine (Crème de Mûre)</li>
+                                <li>1 cl soka od limuna</li>
+                                <li>Pire od bobičastog voća</li>
+                                <li>Promešati</li>
+                                <li>12 cl 28 BLACK Classic Energy Taste</li>
+                                <li>Poslužiti u Longdrink čaši (visokoj čaši)</li>
+                                <li>Dekoracija: Maline, borovnice ili kupine</li>
+                            </ul>
+                            <p class="text-sm text-gray-500 mt-4 italic">Klikni ponovo da zatvoriš</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cocktail Card 8 -->
+                <div class="flip-card perspective-1000 cursor-pointer h-[500px] gs-reveal" onclick="this.classList.toggle('flipped')">
+                    <div class="flip-card-inner relative w-full h-full transform-style-3d">
+                        <!-- Front -->
+                        <div class="absolute w-full h-full backface-hidden border border-white/20 bg-black/50 p-8 flex flex-col justify-between hover:border-white/40 transition-colors">
+                            <div class="flex-1 flex items-center justify-center mb-6">
+                                <!-- UBACI SLIKU KOKTELA OVDE -->
+                                <img src="slike/koktel8.webp" alt="Lillet Açaí Zero 28" class="max-h-full object-contain">
+                            </div>
+                            <div>
+                                <!-- UBACI NAZIV I OPIS KOKTELA OVDE -->
+                                <h3 class="font-heading text-3xl mb-2">Lillet Açaí Zero 28</h3>
+                                <p class="text-gray-400 text-sm mb-6">Lagano, osvežavajuće i zaista Lillet Blanc</p>
+                                <button class="bg-white text-black font-bold py-3 px-6 uppercase tracking-wider text-sm hover:bg-gray-200 transition-colors">Napravi sada</button>
+                            </div>
+                        </div>
+                        <!-- Back -->
+                        <div class="absolute w-full h-full backface-hidden rotate-y-180 border border-gold28 bg-black p-8 flex flex-col">
+                            <h3 class="font-heading text-3xl mb-6 text-gold28">Kako napraviti</h3>
+                            <!-- UBACI SASTOJKE KOKTELA OVDE -->
+                            <ul class="text-gray-300 space-y-3 list-disc list-inside flex-1 overflow-y-auto">
+                                <li>Kockice leda</li>
+                                <li>4 cl Lillet Blanc-a</li>
+                                <li>2 cl soka od limuna</li>
+                                <li>1 kap (vrlo malo) Peychaud’s aromatičnog bitera</li>
+                                <li>Dodati 28 BLACK Açaí Zero</li>
+                                <li>Promešati</li>
+                                <li>Poslužiti u Double Old Fashioned čaši (niska, široka čaša)</li>
+                                <li>Dekoracija: Limun i borovnice</li>
+                            </ul>
+                            <p class="text-sm text-gray-500 mt-4 italic">Klikni ponovo da zatvoriš</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cocktail Card 9 -->
+                <div class="flip-card perspective-1000 cursor-pointer h-[500px] gs-reveal" onclick="this.classList.toggle('flipped')">
+                    <div class="flip-card-inner relative w-full h-full transform-style-3d">
+                        <!-- Front -->
+                        <div class="absolute w-full h-full backface-hidden border border-white/20 bg-black/50 p-8 flex flex-col justify-between hover:border-white/40 transition-colors">
+                            <div class="flex-1 flex items-center justify-center mb-6">
+                                <!-- UBACI SLIKU KOKTELA OVDE -->
+                                <img src="slike/koktel9.webp" alt="Caribbean Sunrise 28" class="max-h-full object-contain">
+                            </div>
+                            <div>
+                                <!-- UBACI NAZIV I OPIS KOKTELA OVDE -->
+                                <h3 class="font-heading text-3xl mb-2">Caribbean Sunrise 28</h3>
+                                <p class="text-gray-400 text-sm mb-6">Čiste tropske vibracije u čaši...</p>
+                                <button class="bg-white text-black font-bold py-3 px-6 uppercase tracking-wider text-sm hover:bg-gray-200 transition-colors">Napravi sada</button>
+                            </div>
+                        </div>
+                        <!-- Back -->
+                        <div class="absolute w-full h-full backface-hidden rotate-y-180 border border-gold28 bg-black p-8 flex flex-col">
+                            <h3 class="font-heading text-3xl mb-6 text-gold28">Kako napraviti</h3>
+                            <!-- UBACI SASTOJKE KOKTELA OVDE -->
+                            <ul class="text-gray-300 space-y-3 list-disc list-inside flex-1 overflow-y-auto">
+                                <li>Kockice leda</li>
+                                <li>5 cl Malibu likera</li>
+                                <li>5 cl soka od ananasa</li>
+                                <li>2 cl soka od limuna</li>
+                                <li>Promešati</li>
+                                <li>5 cl 28 BLACK Classic-a</li>
+                                <li>Poslužiti u Longdrink čaši (visokoj čaši)</li>
+                                <li>Dekoracija: Kriška ananasa</li>
+                            </ul>
+                            <p class="text-sm text-gray-500 mt-4 italic">Klikni ponovo da zatvoriš</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer" class="relative bg-black pt-20 pb-10 overflow-hidden">
+        <div class="container mx-auto px-6 relative z-10">
+    
+           <div class="flex flex-col items-center justify-center text-center mb-16 space-y-3 text-gray-400">
+              <h4 class="text-2xl md:text-3xl text-white font-heading tracking-wider mb-2 uppercase">IAB Group d.o.o.</h4>
+              <p>Matični broj: <span class="text-white">22074377</span></p>
+              <p>PIB: <span class="text-white">114814565</span></p>
+              <p>Telefon: <a href="tel:+381601234567" class="text-white hover:text-gold28 transition-colors">+381 62 388 818</a></p>
+              <p>Email: <a href="mailto:iab.group.balkan@gmail.com" class="text-white hover:text-gold28 transition-colors">iab.group.balkan@gmail.com</a></p>
+            </div>
+             
+            <div class="flex flex-col items-center border-t border-gray-800 pt-10">
+                <div class="flex gap-8 mb-8">
+                    <a href="https://www.instagram.com/28black_srbija/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors font-bold tracking-wider uppercase text-sm">Instagram</a>
+                    <a href="https://www.tiktok.com/@28black.rs" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors font-bold tracking-wider uppercase text-sm">TikTok</a>
+                    <a href="https://www.youtube.com/@28BLACKchannel" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors font-bold tracking-wider uppercase text-sm">YouTube</a>
+                </div>
+                
+                <img src="slike/28_logo.webp" alt="28 Black Logo" class="h-8 mb-6">
+                
+                <div class="text-gray-600 text-sm text-center">
+                    &copy; 2026 28 Black. Sva prava zadržana.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- GSAP & ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <script>
+        // Mobile Menu Logic
+        const mobileMenu = document.getElementById('mobile-menu');
+        const openMenuBtn = document.getElementById('open-menu');
+        const closeMenuBtn = document.getElementById('close-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        if(openMenuBtn && closeMenuBtn && mobileMenu) {
+            openMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.remove('translate-x-full');
+            });
+            closeMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.add('translate-x-full');
+            });
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('translate-x-full');
+                });
+            });
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            gsap.registerPlugin(ScrollTrigger);
+            
+            // Stagger reveal for header and cards
+            gsap.from(".gs-reveal", {
+                y: 50,
+                opacity: 0,
+                duration: 1,
+                stagger: 0.2,
+                ease: "power3.out",
+                delay: 0.2
+            });
+        });
+    </script>
+</body>
+</html>
